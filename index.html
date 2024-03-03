@@ -69,13 +69,18 @@
         </div>
     </center>
 
-    <script>
-        function playMusic() {
+	<script>
+    var musicPlaying = false;
+
+    function playMusic() {
+        if (!musicPlaying) {
             var songUrl = "https://cdn.discordapp.com/attachments/1202592412011200512/1213804896747520060/y2mate.com_-_Kurtlar_Vadisi_Operasyon_Muzigi_SLOWED_EN_IYI_PART.mp3?ex=65f6cee6&is=65e459e6&hm=6be19cf7aae61c78db483deae2a358447a68e70993eb9f2ebdd4d44e1d71d531&";
             var audio = new Audio(songUrl);
             audio.play();
+            musicPlaying = true;
         }
-    </script>
+    }
+	</script>
 </body>
 
 </html>
