@@ -1,94 +1,535 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark" style="color-scheme: dark;">
 
 <head>
-    <title>Hacked By ACE Veen</title>
-    <link href="https://fonts.googleapis.com/css?family=Righteous|Poppins&display=swap" rel="stylesheet">
-    <meta name="title" content="Hacked by ACE Veen">
-    <meta name="description" content="Hacked by ACE & Moriarty & Sergei">
-    <meta name="keywords"
-        content="ACE Veen, Hacking, Web Pentesting, White Hat, Grey Hat, Black Hat, Hacker, Anonymous, Ayyıldız Tim, TurkHackTeam, Checker, Defacer, Pentester, Telegram, Discord, WarNight">
     <meta charset="UTF-8">
-    <style type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Hacked By ACE Veen</title>
+    <meta name="title" content="Hacked by ACE Veen">
+    <meta name="description"
+        content="Hacked by ACE & Moriarty & Sergei & warnight & warnight.pw & aceveen1337 & aceveen1948 & aceveen">
+    <meta name="keywords" content="ACE Veen, WarNight">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Righteous&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #07060c;
+            --cyan: #00f2ff;
+            --yellow: #ffd700;
+            --purple: #b23cff;
+            --lav: #d8b4fe;
+            --w: clamp(250px, min(30vw, 44vh), 400px);
+            --gap: clamp(12px, 2.4vh, 22px);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
         body {
-            background: url() no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            background-blend-mode: screen;
-            background-color: black;
-            cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur686.cur), progress !important;
-            color: white;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            overflow: hidden;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur686.cur), progress !important
+        }
+
+        a,
+        button {
+            cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur683.cur), pointer !important
+        }
+
+        canvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 1
+        }
+
+        #vig {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 3;
+            background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, .8) 100%)
+        }
+
+        /* ---- tek sütun, hepsi ortalı ---- */
+        #main {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: env(safe-area-inset-top, 0) 12px env(safe-area-inset-bottom, 0)
+        }
+
+        #col {
+            width: var(--w);
             display: flex;
             flex-direction: column;
-            font-family: 'Righteous', cursive;
+            align-items: center;
+            text-align: center;
+            gap: var(--gap)
         }
 
-        a:hover {
-            cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur683.cur), progress !important;
-        } 
-
-        div {
-            text-shadow: 2px 2px 4px #000000;
+        #col>* {
+            opacity: 0;
+            animation: in .9s cubic-bezier(.2, .8, .2, 1) forwards
         }
 
-        a {
-            text-decoration: none;
+        #col>:nth-child(1) {
+            animation-delay: .05s
         }
 
-        h3:hover {
-            animation: shake 0.5s;
-            animation-iteration-count: infinite;
+        #col>:nth-child(2) {
+            animation-delay: .2s
         }
 
-        b {
-            color: white;
+        #col>:nth-child(3) {
+            animation-delay: .35s
         }
 
-        @keyframes shake {
-            0% {
-                transform: translateX(0);
+        #col>:nth-child(4) {
+            animation-delay: .5s
+        }
+
+        #col>:nth-child(5) {
+            animation-delay: .65s
+        }
+
+        @keyframes in {
+            from {
+                opacity: 0;
+                transform: translateY(14px)
             }
 
-            25% {
-                transform: translateX(-5px);
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        /* logo */
+        #wrap {
+            width: 100%;
+            animation: in .9s .05s cubic-bezier(.2, .8, .2, 1) forwards, glitch 9s 1s steps(1) infinite
+        }
+
+        #logo {
+            width: 100%;
+            height: auto;
+            display: block;
+            overflow: visible;
+            animation: breathe 7s ease-in-out infinite
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 16px rgba(178, 60, 255, .35))
             }
 
             50% {
-                transform: translateX(5px);
+                filter: drop-shadow(0 0 34px rgba(178, 60, 255, .65))
+            }
+        }
+
+        @keyframes glitch {
+
+            0%,
+            95.5%,
+            97.5%,
+            100% {
+                transform: translate(0, 0);
+                filter: none
+            }
+
+            96% {
+                transform: translate(-5px, 0);
+                filter: drop-shadow(-4px 0 rgba(0, 230, 200, .45)) drop-shadow(4px 0 rgba(255, 60, 140, .35))
+            }
+
+            96.8% {
+                transform: translate(4px, 1px);
+                filter: drop-shadow(3px 0 rgba(0, 230, 200, .4)) drop-shadow(-3px 0 rgba(255, 60, 140, .3))
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0
+            }
+        }
+
+        .cur {
+            animation: blink 1.1s steps(1) infinite
+        }
+
+        /* gif: logoyla aynı genişlik, çerçeve/gölge yok */
+        #pic {
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: block;
+            object-fit: cover;
+            border: none;
+            box-shadow: none;
+            filter: none;
+            border-radius: 10px
+        }
+
+        /* başlık grubu */
+        .title {
+            margin: 0;
+            font-size: clamp(22px, 3.4vh, 30px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -.2px;
+            white-space: nowrap
+        }
+
+        .title span {
+            color: #9537D6;
+            text-shadow: 0 0 12px rgba(0, 242, 255, .75)
+        }
+
+        .title:hover {
+            animation: shake .5s infinite
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0)
+            }
+
+            25% {
+                transform: translateX(-4px)
+            }
+
+            50% {
+                transform: translateX(4px)
             }
 
             75% {
-                transform: translateX(-5px);
+                transform: translateX(-4px)
             }
+        }
 
-            100% {
-                transform: translateX(0);
+        .names {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .7em;
+            margin-top: .5em;
+            color: var(--yellow);
+            font-weight: 600;
+            font-size: clamp(14px, 2.2vh, 18px);
+            text-shadow: 0 0 10px rgba(255, 215, 0, .5)
+        }
+
+        .names i {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--yellow);
+            opacity: .7;
+            box-shadow: 0 0 8px var(--yellow)
+        }
+
+        /* marka + ince ayraç */
+        .brand-row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand-row::before,
+        .brand-row::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(178, 60, 255, .7))
+        }
+
+        .brand-row::after {
+            background: linear-gradient(270deg, transparent, rgba(178, 60, 255, .7))
+        }
+
+        .brand {
+            font-family: 'Righteous', cursive;
+            color: var(--purple);
+            font-size: clamp(17px, 2.6vh, 22px);
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 12px var(--purple);
+            white-space: nowrap
+        }
+
+        /* iletişim: iki eşit buton */
+        .contact {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .pill {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 8px;
+            border-radius: 12px;
+            font: 500 clamp(12px, 1.9vh, 14px)/1 'Poppins', sans-serif;
+            color: var(--lav);
+            text-decoration: none;
+            white-space: nowrap;
+            background: rgba(178, 60, 255, .08);
+            border: 1px solid rgba(178, 60, 255, .35);
+            transition: .25s
+        }
+
+        .pill svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            flex: none
+        }
+
+        .pill:hover {
+            transform: translateY(-2px);
+            color: #fff;
+            background: rgba(178, 60, 255, .18);
+            border-color: var(--purple);
+            box-shadow: 0 6px 22px rgba(178, 60, 255, .35)
+        }
+
+        button.pill {
+            font-family: 'Poppins', sans-serif
+        }
+
+        #toast {
+            position: fixed;
+            left: 50%;
+            bottom: calc(22px + env(safe-area-inset-bottom, 0));
+            transform: translate(-50%, 16px);
+            opacity: 0;
+            z-index: 5;
+            padding: 9px 16px;
+            border-radius: 10px;
+            background: rgba(20, 14, 34, .92);
+            border: 1px solid var(--purple);
+            font-size: 13px;
+            transition: .3s;
+            pointer-events: none
+        }
+
+        #toast.show {
+            opacity: 1;
+            transform: translate(-50%, 0)
+        }
+
+        #hint {
+            position: fixed;
+            bottom: 14px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            color: #6b6685;
+            transition: opacity 1s;
+            z-index: 4
+        }
+
+        @media (max-height:560px) {
+
+            .names,
+            .contact {
+                display: none
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+
+            #logo,
+            #wrap,
+            .cur,
+            #col>* {
+                animation: none;
+                opacity: 1
             }
         }
     </style>
 </head>
 
 <body onclick="playMusic()">
-    <div align="center"><br><br><br><br><img src="https://i.pinimg.com/originals/89/e7/57/89e75784e6139a058b46c3fdd4c02f8a.gif"
-            alt="gif" width="400" height="300"></div>
-    <center>
-        <div style="color:rgb(255, 0, 0); font-size: 28pt; font-family: 'Poppins', cursive; text-shadow: 0px 0px 9px;">
-            <h3><b>Hacked by <font color="#FF0000">ACE Veen</font></b></h3>
+
+    <canvas id="c"></canvas>
+
+    <div id="main">
+        <div id="col">
+            <div id="wrap">
+                <svg id="logo" viewBox="-70 -30 640 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WN">
+                    <defs>
+                        <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#f4f1ff" />
+                            <stop offset="1" stop-color="#b3a2f0" />
+                        </linearGradient>
+                        <linearGradient id="gn" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#cc5cff" />
+                            <stop offset="1" stop-color="#8524dc" />
+                        </linearGradient>
+                        <clipPath id="cl">
+                            <rect x="0" y="20" width="480" height="180" />
+                        </clipPath>
+                        <mask id="cut">
+                            <rect x="-70" y="-30" width="640" height="290" fill="#fff" />
+                            <rect x="-70" y="106" width="640" height="4" fill="#000" />
+                            <rect x="-70" y="150" width="640" height="2" fill="#000" opacity=".8" />
+                        </mask>
+                    </defs>
+                    <g stroke="#a96bff" stroke-width="1.6" fill="none" opacity=".55">
+                        <path d="M-62 108 H-10 L6 92 H18" />
+                        <path d="M-40 108 V150 H-16" />
+                        <path d="M500 108 H520 L536 124 H562" />
+                        <path d="M528 124 V70 H548" />
+                    </g>
+                    <g fill="#c58cff" opacity=".8">
+                        <rect x="-66" y="104" width="8" height="8" />
+                        <rect x="-20" y="146" width="8" height="8" />
+                        <rect x="558" y="120" width="8" height="8" />
+                        <rect x="544" y="66" width="8" height="8" />
+                    </g>
+                    <g stroke="#7d6bb8" stroke-width="2" fill="none" opacity=".6">
+                        <path d="M-8 4 H-24 V22" />
+                        <path d="M488 4 H504 V22" />
+                        <path d="M-8 216 H-24 V198" />
+                        <path d="M488 216 H504 V198" />
+                    </g>
+                    <g mask="url(#cut)" clip-path="url(#cl)" fill="none" stroke-miterlimit="1.6"
+                        stroke-linejoin="miter">
+                        <path d="M28 8 L82 214 L146 74 L210 214 L264 8" stroke="url(#gw)" stroke-width="38" />
+                        <path d="M312 220 V-6 L440 220 V-6" stroke="url(#gn)" stroke-width="38" />
+                    </g>
+                    <text x="0" y="252" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="17"
+                        letter-spacing="3" fill="#8f86b8">&gt; wn.init()<tspan class="cur" fill="#c58cff">_</tspan>
+                        </text>
+                </svg>
+            </div>
+
+            <img id="pic" src="https://i.pinimg.com/originals/89/e7/57/89e75784e6139a058b46c3fdd4c02f8a.gif" alt="gif">
+
+            <div>
+                <h3 class="title">Hacked by <span>ACE Veen</span></h3>
+                <div class="names">ImDray<i></i>Requiem<i></i>Skendal<i></i>Sergei<i></i>Mori<i></i>Hisoka</div>
+            </div>
+
+            <div class="brand-row">
+                <div class="brand">WarNight.PW</div>
+            </div>
+
+            <div class="contact">
+                <a class="pill" href="https://t.me/ACEVeen" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-8c.4-.3-.1-.5-.6-.2L6.6 13 2 11.6c-1-.3-1-1 .2-1.5L20.2 3.2c.8-.3 1.6.2 1.7 1.1z" />
+                    </svg>
+                    t.me/ACEVeen
+                </a>
+                <button class="pill" id="dc" type="button" style="background:rgba(178,60,255,.08)">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+                    </svg>
+                    aceveen
+                </button>
+            </div>
         </div>
-        <div style="color:#d0ff00; font-size: 24pt; font-family: 'Poppins', cursive; text-shadow: 0px 0px 9px ;"><b
-                style="color: yellow;">ACE Veen ~ Sergei ~ Mori </b></div><br>
-        <div
-            style="color:rgb(255, 0, 0); font-size: 24px; font-family: 'Righteous', cursive; text-shadow: 0px 0px 9px;">
-            <span>WarNight.PW</span>
-        </div>
-        <div style="color:white; font-size: 24px; font-family: 'Righteous', cursive; text-shadow: 0px 0px 9px;">
-            <span>Contact: t.me/ACEVeen ~ aceveen (Discord)<br></span>
-        </div>
-    </center>
-    <script> var musicPlaying = false; function playMusic() { if (!musicPlaying) { var songUrl = "https://h.top4top.io/m_3075zdcin1.mp3"; var audio = new Audio(songUrl); audio.play(); musicPlaying = true; } } </script>
+    </div>
+
+    <div id="vig"></div>
+    <div id="toast">Discord: aceveen kopyalandı</div>
+    <div id="hint">Press F for fullscreen</div>
+
+    <script>
+        const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+        let W, H, cols, drops, parts, fs;
+        const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+        const chars = '01{}[]<>/=;:+*#$%&WN';
+
+        function size() {
+            const d = Math.min(window.devicePixelRatio || 1, 3);
+            W = cv.width = Math.round(innerWidth * d); H = cv.height = Math.round(innerHeight * d);
+            fs = Math.max(14, Math.round(H / 70));
+            cols = Math.ceil(W / fs);
+            drops = Array.from({ length: cols }, () => ({ y: Math.random() * H / fs, v: .15 + Math.random() * .35, a: .05 + Math.random() * .14 }));
+            parts = Array.from({ length: Math.round(W * H / 40000) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: (.5 + Math.random() * 1.4) * (H / 1080), s: .05 + Math.random() * .25, p: Math.random() * 6.28 }));
+        }
+        addEventListener('resize', size); size();
+
+        function frame(t) {
+            const g = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * .7);
+            g.addColorStop(0, '#120c1f'); g.addColorStop(.55, '#0a0813'); g.addColorStop(1, '#050409');
+            ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+            ctx.strokeStyle = 'rgba(140,100,220,.045)'; ctx.lineWidth = 1;
+            const gs = fs * 4; ctx.beginPath();
+            for (let x = 0; x < W; x += gs) { ctx.moveTo(x, 0); ctx.lineTo(x, H) }
+            for (let y = 0; y < H; y += gs) { ctx.moveTo(0, y); ctx.lineTo(W, y) }
+            ctx.stroke();
+            ctx.font = fs + 'px ui-monospace,Menlo,Consolas,monospace';
+            for (let i = 0; i < cols; i++) {
+                const d = drops[i];
+                for (let k = 0; k < 14; k++) {
+                    const yy = (d.y - k) * fs; if (yy < 0 || yy > H) continue;
+                    const fade = (1 - k / 14) * d.a;
+                    ctx.fillStyle = i % 7 === 0 ? `rgba(80,200,200,${fade})` : `rgba(170,110,255,${fade})`;
+                    ctx.fillText(chars[(i * 7 + Math.floor(d.y) - k + chars.length * 50) % chars.length], i * fs, yy);
+                }
+                if (!reduce) d.y += d.v;
+                if (d.y * fs > H + fs * 14) { d.y = -Math.random() * 20; d.v = .15 + Math.random() * .35 }
+            }
+            for (const p of parts) {
+                if (!reduce) { p.y -= p.s; p.x += Math.sin(t / 3000 + p.p) * .15 }
+                if (p.y < -5) { p.y = H + 5; p.x = Math.random() * W }
+                ctx.fillStyle = `rgba(200,160,255,${.12 + .1 * Math.sin(t / 1200 + p.p)})`;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+            }
+            const sy = ((t / 24) % (H * 1.4)) - H * .2;
+            const sg = ctx.createLinearGradient(0, sy - H * .08, 0, sy + H * .08);
+            sg.addColorStop(0, 'rgba(178,60,255,0)'); sg.addColorStop(.5, 'rgba(178,60,255,.035)'); sg.addColorStop(1, 'rgba(178,60,255,0)');
+            ctx.fillStyle = sg; ctx.fillRect(0, sy - H * .08, W, H * .16);
+            requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+
+        addEventListener('keydown', e => { if (e.key.toLowerCase() === 'f') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen() } });
+        setTimeout(() => { document.getElementById('hint').style.opacity = 0 }, 5000);
+
+        document.getElementById('dc').addEventListener('click', function () {
+            const t = document.getElementById('toast');
+            try { navigator.clipboard && navigator.clipboard.writeText('aceveen') } catch (e) { }
+            t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1800);
+        });
+
+        var musicPlaying = false;
+        function playMusic() {
+            if (!musicPlaying) {
+                var songUrl = "https://h.top4top.io/m_3075zdcin1.mp3";
+                var audio = new Audio(songUrl);
+                audio.play();
+                musicPlaying = true;
+            }
+        }
+    </script>
 </body>
 
 </html>
